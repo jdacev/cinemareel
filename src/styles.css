@@ -1,3 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-body {background-color: lightgrey;}
+body {
+    background-color: ghostwhite;
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 110%;
+  }
+
+a {
+    color: #369;
+}

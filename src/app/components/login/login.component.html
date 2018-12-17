@@ -1,0 +1,39 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div>
+  <h1>Entrar en Cinema</h1>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col"></div>
+    <div class="col">
+      <div>
+        <div class="card">
+          <!--
+          <a href="#"><img class="card-img-top" width="200" src="assets/img/reel3.jpg"></a>
+          -->
+          <div class="card-body">
+            <div class="btn-group">
+              <form #formLogin="ngForm" (ngSubmit)="entrar(formLogin);">
+                <div class="form-group mx-sm-3 mb-2 text-left">
+                  <input ngModel type="text" name="user" class="form-control" placeholder="Usuario">
+                </div>
+                <br>
+                <div class="form-group mx-sm-3 mb-2 text-left">
+                  <input ngModel type="password" name="pass" class="form-control" placeholder="Contraseña">
+                </div>
+                <br>
+                <div class="form-check">
+                  <button type="submit" [disabled]="loading" class="btn btn-primary">Vamos!</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br/><br/><br/>
+    </div>
+    <div class="col">
+      <a [routerLink]="['/register']" class="btn btn-link">Soy nuevo en Cinema</a>
+    </div>
+  </div>
+  </div>

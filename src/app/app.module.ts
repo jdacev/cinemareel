@@ -11,12 +11,16 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
+import { AlertComponent } from './components/alert/alert.component';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    AlertComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
