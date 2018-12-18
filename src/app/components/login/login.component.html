@@ -1,39 +1,59 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div>
-  <h1>Entrar en Cinema</h1>
-</div>
-<div class="container">
-  <div class="row">
-    <div class="col"></div>
-    <div class="col">
-      <div>
-        <div class="card">
-          <!--
-          <a href="#"><img class="card-img-top" width="200" src="assets/img/reel3.jpg"></a>
-          -->
-          <div class="card-body">
-            <div class="btn-group">
-              <form #formLogin="ngForm" (ngSubmit)="entrar(formLogin);">
+<div class="row">
+
+  <div class="col-4">
+    <div>
+      <h2>Entrar en Cinema</h2>
+    </div>
+        <div class="card-body">
+          <div class="btn-group">
+            <form #formLogin="ngForm" (ngSubmit)="entrar(formLogin);">
                 <div class="form-group mx-sm-3 mb-2 text-left">
-                  <input ngModel type="text" name="user" class="form-control" placeholder="Usuario">
-                </div>
-                <br>
-                <div class="form-group mx-sm-3 mb-2 text-left">
-                  <input ngModel type="password" name="pass" class="form-control" placeholder="Contraseña">
-                </div>
-                <br>
-                <div class="form-check">
-                  <button type="submit" [disabled]="loading" class="btn btn-primary">Vamos!</button>
-                </div>
-              </form>
-            </div>
+                <input ngModel type="text" name="user" class="form-control" placeholder="Usuario">
+              </div>
+              <br>
+              <div class="form-group mx-sm-3 mb-2 text-left">
+                <input ngModel type="password" name="pass" class="form-control" placeholder="Contraseña">
+              </div>
+              <br>
+              <div class="form-check">
+                <button type="submit" [disabled]="loading" class="btn btn-primary">Vamos!</button>
+              </div>
+            </form>
           </div>
         </div>
+  </div>
+
+  <div class="col-4"></div>
+
+  <div class="col-4">
+    <!--<a [routerLink]="['/register']" class="btn btn-link">Soy nuevo en Cinema</a>-->
+    <div>
+      <h2>Soy nuevo, quiero registrarme</h2>
+    </div>
+    <div class="card-body">
+      <div class="btn-group">
+        <form #formRegister="ngForm" (ngSubmit)="registrarme(formRegister);">
+          <div class="form-group mx-sm-3 mb-2 text-left">
+              <input ngModel type="text" name="email" class="form-control" placeholder="Correo electrónico">
+          </div>
+          <br>
+          <div class="form-group mx-sm-3 mb-2 text-left">
+            <input ngModel type="text" name="fisrtname" class="form-control" placeholder="Nombre">
+          </div>
+          <br>
+          <div class="form-group mx-sm-3 mb-2 text-left">
+            <input ngModel type="text" name="lastname" class="form-control" placeholder="Apellido">
+          </div>
+          <br>
+          <div class="form-group mx-sm-3 mb-2 text-left">
+            <input ngModel type="password" name="password" class="form-control" placeholder="Contraseña">
+          </div>
+          <br>
+          <div class="form-check">
+            <button type="submit" [disabled]="loading" class="btn btn-primary">Listo!</button>
+          </div>
+        </form>
       </div>
-      <br/><br/><br/>
-    </div>
-    <div class="col">
-      <a [routerLink]="['/register']" class="btn btn-link">Soy nuevo en Cinema</a>
     </div>
   </div>
-  </div>
+</div>
