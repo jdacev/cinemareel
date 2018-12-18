@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(username, password).then((data: any) => {
 
       if (data.errType == 0) {
-        this.alertService.success('Registration successful', true);
+        //this.alertService.success('Registration successful', true);
         this.router.navigate(['/portal-home']);
       } else {
         console.log('error ' + JSON.stringify(data) );

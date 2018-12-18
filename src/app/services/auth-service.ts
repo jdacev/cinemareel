@@ -57,9 +57,8 @@ export class AuthService {
       return new Promise(resolve => {
         this.http.post(this.url + 'login', creds).subscribe(response => {
             
-            console.log(response.json());
             var data = response.json();
-            resolve({errType:data.errType,message:data.message});
+            resolve( {errType:data.errType,message:data.message} );
             if(data.errType == 0){
               this.storeUserCredentials(data);
             }
