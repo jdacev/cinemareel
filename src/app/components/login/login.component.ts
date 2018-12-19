@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   returnUrl: string;
   notifier: NotifierService;
 
-  constructor(
+  constructor (
     notifierService: NotifierService,
     private authService: AuthService,
     private spinner: NgxSpinnerService,
@@ -26,6 +26,9 @@ export class LoginComponent implements OnInit {
     private alertService: AlertService
   ) {
     this.notifier = notifierService;
+    if (authService.user) {
+      this.router.navigate(['portal-home']);
+    }
    }
 
   ngOnInit() {

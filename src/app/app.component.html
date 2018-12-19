@@ -6,11 +6,11 @@
                 <header id="header">
                     <div class="inner">
                         <!-- Logo -->
-                        <h1><a href="index.html" id="logo">Cinema</a></h1>
-                        
+                        <h1><a href="" id="logo">Cinema</a></h1>
                         <!-- Nav -->
-                        <!-- <nav id="nav">
+                        <nav id="nav">
                             <ul>
+                                <!--
                                 <li><a href="index.html">Home</a></li>
                                 <li>
                                     <a href="#">Dropdown</a>
@@ -30,10 +30,14 @@
                                     </ul>
                                 </li>
                                 <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                                <li class="current_page_item"><a href="right-sidebar.html">Right Sidebar</a></li>
-                                <li><a href="no-sidebar.html">No Sidebar</a></li>
+                                -->
+                                <li class="current_page_item">
+                                    <a href="">{{user}}</a>
+                                </li>
+                                
+                                <li><a href="" (click)="logout()" class="boton-salir">Salir de Cinema</a></li>
                             </ul>
-                        </nav> -->
+                        </nav>
                     </div>
                 </header>
             </div>
@@ -45,9 +49,11 @@
                 <div class="inner">
                     <div class="container">
                         <div class="row">
+
                             <alert></alert>
                             <notifier-container></notifier-container>
                             <router-outlet></router-outlet>
+
                         </div>
                     </div>
                 </div>

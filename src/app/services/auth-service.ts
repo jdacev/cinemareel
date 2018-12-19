@@ -36,6 +36,11 @@ export class AuthService {
     this.user=null;
   }
 
+  loadUserCredentials() {
+    var token = window.localStorage.getItem('currentUser');
+    this.useCredentials(JSON.parse(token));
+  }
+
   useCredentials(User) {
     if(User) {
       this.isLoggedIn = true;
