@@ -33,16 +33,38 @@ export class LoginComponent implements OnInit {
   }
 
   registrarme(f: NgForm){
+    this.loading = true;
+    this.spinner.show();
+    console.log(f);
+    this.authService.signup(
+      f.value.emailreg, 
+      f.value.firstname, 
+      f.value.lastname, 
+      f.value.password).then((data: any) => {
 
+      if (data.errType == 0) {
+        //this.alertService.success('Registration successful', true);
+        this.router.navigate(['/portal-home']);
+      } else {
+        console.log('error ' + JSON.stringify(data) );
+        //this.alertService.error(JSON.stringify(data));
+        this.router.navigate(['/login']);
+        this.notifier.notify('error', data.message);
+      }
+    }).then(()=> {
+      this.loading = false;
+      this.spinner.hide();
+    });
   }
 
   entrar(f: NgForm) {
     
     this.loading = true;
     this.spinner.show();
-    var username = f.value.user;
-    var password = f.value.pass;
-    this.authService.login(username, password).then((data: any) => {
+    
+    this.authService.login(
+      f.value.email, 
+      f.value.pass).then((data: any) => {
 
       if (data.errType == 0) {
         //this.alertService.success('Registration successful', true);

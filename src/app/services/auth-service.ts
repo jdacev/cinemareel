@@ -47,10 +47,36 @@ export class AuthService {
     }
   }
 
-  login(username, password) {
+  signup(email, firstname, lastname, password) {
+
+    var regData = {
+      email: email,
+      firstName: firstname,
+      lastName: lastname,
+      password: password
+    }
+    
+    return new Promise(resolve => {
+      this.http.post(this.url + 'signup', regData).subscribe(response => {
+          
+          var data = response.json();
+          resolve( {errType:data.errType,message:data.message} );
+          if(data.errType == 0){
+            this.storeUserCredentials(data);
+          }
+            this.router.navigateByUrl(this.returnUrl);
+            
+      }, error => {
+        this.notifier.notify( 'error', error.json().message);
+        resolve(false);
+      });
+    });
+  }
+
+  login(email, password) {
 
       var creds = {
-        username: username,
+        email: email,
         password: password
       }
       

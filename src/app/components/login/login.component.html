@@ -8,7 +8,7 @@
           <div class="btn-group">
             <form #formLogin="ngForm" (ngSubmit)="entrar(formLogin);">
                 <div class="form-group mx-sm-3 mb-2 text-left">
-                <input ngModel type="text" name="user" class="form-control" placeholder="Usuario">
+                <input ngModel type="text" name="email" class="form-control" placeholder="Correo electrónico">
               </div>
               <br>
               <div class="form-group mx-sm-3 mb-2 text-left">
@@ -34,7 +34,7 @@
       <div class="btn-group">
         <form #formRegister="ngForm" (ngSubmit)="registrarme(formRegister);">
           <div class="form-group mx-sm-3 mb-2 text-left">
-              <input ngModel type="text" name="email" class="form-control" placeholder="Correo electrónico">
+              <input ngModel type="text" name="emailreg" class="form-control" placeholder="Correo electrónico">
           </div>
           <br>
           <div class="form-group mx-sm-3 mb-2 text-left">
