@@ -14,6 +14,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AlertComponent } from './components/alert/alert.component';
 import { LoginComponent } from './components/login/login.component';
 
+import { NgxSpinnerModule } from 'ngx-spinner';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { LoginComponent } from './components/login/login.component';
     HttpModule,
     NotifierModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

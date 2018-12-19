@@ -9,7 +9,7 @@ import { NotifierService } from 'angular-notifier';
 })
 export class AuthService {
 
-  private readonly notifier: NotifierService;
+  public notifier: NotifierService;
   public url:string = null;
   public returnUrl:string;
   isLoggedIn: boolean;
