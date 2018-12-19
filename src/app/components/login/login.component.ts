@@ -32,6 +32,10 @@ export class LoginComponent implements OnInit {
 
   }
 
+  registrarme(f: NgForm){
+
+  }
+
   entrar(f: NgForm) {
     
     this.loading = true;
