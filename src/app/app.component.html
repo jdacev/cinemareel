@@ -30,12 +30,12 @@
                                     </ul>
                                 </li>
                                 <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                                -->
                                 <li class="current_page_item">
-                                    <a href="">aaaaaaaaaaaaaa</a>
+                                    <a href="">{{authService.isLoggedIn}}</a>
                                 </li>
+                                -->
                                 
-                                <li><a href="" (click)="logout()" class="boton-salir">Salir de Cinema</a></li>
+                                <li><a href="" *ngIf="authService.isLoggedIn" (click)="logout()" class="boton-salir">Salir de Cinema</a></li>
                             </ul>
                         </nav>
                     </div>
