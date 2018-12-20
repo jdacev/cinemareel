@@ -23,12 +23,14 @@ export class LoginComponent implements OnInit {
     private authService: AuthService,
     private spinner: NgxSpinnerService,
     private router: Router,
-    private alertService: AlertService
-  ) {
-    this.notifier = notifierService;
-    if (authService.user) {
-      this.router.navigate(['portal-home']);
-    }
+    //private alertService: AlertService
+    ) {
+      
+      this.notifier = notifierService;
+      
+      if (authService.user) {
+        this.router.navigate(['portal-home']);
+      }
    }
 
   ngOnInit() {
@@ -46,11 +48,10 @@ export class LoginComponent implements OnInit {
       f.value.password).then((data: any) => {
 
       if (data.errType == 0) {
-        //this.alertService.success('Registration successful', true);
+        //this.alertService.success('El registro en Cinema Reel fue un éxito!', true);
         this.router.navigate(['/portal-home']);
       } else {
-        console.log('error ' + JSON.stringify(data) );
-        //this.alertService.error(JSON.stringify(data));
+        //this.alertService.error('Se produjo un error en la registración '  + JSON.stringify(data));
         this.router.navigate(['/login']);
         this.notifier.notify('error', data.message);
       }
@@ -70,11 +71,10 @@ export class LoginComponent implements OnInit {
       f.value.pass).then((data: any) => {
 
       if (data.errType == 0) {
-        //this.alertService.success('Registration successful', true);
+        //this.alertService.success('El acceso a Cinema Reel fue exitoso!', true);
         this.router.navigate(['/portal-home']);
       } else {
-        console.log('error ' + JSON.stringify(data) );
-        //this.alertService.error(JSON.stringify(data));
+        //this.alertService.error('Se produjo un error al entrar a Cinema Reel ' + JSON.stringify(data));
         this.router.navigate(['/login']);
         this.notifier.notify('error', data.message);
       }

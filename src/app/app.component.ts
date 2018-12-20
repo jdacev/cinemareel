@@ -10,11 +10,13 @@ import { AuthService } from './services/auth-service';
 
 export class AppComponent implements OnInit {
 
+  public user;
+
   constructor (
     private router: Router,
     public authService: AuthService) {
       
-      this.authService.isLoggedIn;
+      this.authService.loadUserCredentials();
   }
 
   ngOnInit() {
