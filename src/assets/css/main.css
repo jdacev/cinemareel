@@ -87,7 +87,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #303238 url("images/bg01.png");
+		background: rgb(5, 17, 51) url("images/bg01.png");
 	}
 
 		body.is-preload * {
@@ -1836,10 +1836,10 @@ input, select, textarea {
 /* Wrappers */
 
 	#header-wrapper {
-		background: url("images/bg01.png"), url("../images/header.jpg");
+		/*background: url("images/bg01.png"), url("../images/header.jpg");*/
 		background-position: top left, center center;
 		background-size: auto, cover;
-		padding: 3em 0;
+		padding: 0em 0;
 	}
 
 	#main-wrapper {
@@ -1855,11 +1855,11 @@ input, select, textarea {
 		background-repeat: repeat-x, no-repeat, repeat;
 		background-size: 100% 100%, 100% 15em, auto auto;
 		background-position: top left, top center, top left;
-		padding: 7em 0 7em 0;
+		padding: 2em 0 2em 0;
 	}
 
 	.wrapper {
-		padding: 7em 0 7em 0;
+		padding: 2em 0 2em 0;
 	}
 
 		.wrapper > .inner {
@@ -1893,7 +1893,7 @@ input, select, textarea {
 		position: relative;
 		border-radius: 10px;
 		background: rgba(255, 255, 255, 0.1);
-		padding: 0.75em;
+		padding: 0.4em;
 		margin-bottom: 0;
 	}
 
@@ -1996,7 +1996,7 @@ input, select, textarea {
 		/* Wrappers */
 
 			#header-wrapper {
-				padding: 2em 0;
+				padding: 0em 0;
 			}
 
 			body.homepage #header-wrapper {
