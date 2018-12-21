@@ -34,6 +34,7 @@ export class AuthService {
   destroyCredentials(){
     localStorage.removeItem('currentUser');
     this.user=null;
+    this.isLoggedIn=false;
   }
 
   loadUserCredentials() {
@@ -52,12 +53,12 @@ export class AuthService {
     }
   }
 
-  signup(email, firstname, lastname, password) {
+  signup(emailreg, firstName, lastName, password) {
 
     var regData = {
-      email: email,
-      firstName: firstname,
-      lastName: lastname,
+      email: emailreg,
+      firstName: firstName,
+      lastName: lastName,
       password: password
     }
     

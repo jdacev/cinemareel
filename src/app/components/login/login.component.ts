@@ -40,11 +40,12 @@ export class LoginComponent implements OnInit {
   registrarme(f: NgForm){
     this.loading = true;
     this.spinner.show();
-    console.log(f);
+    console.log(f.value.emailreg);
+    console.log(f.value.firstName);console.log(f.value.lastName);console.log(f.value.password);
     this.authService.signup(
       f.value.emailreg, 
-      f.value.firstname, 
-      f.value.lastname, 
+      f.value.firstName, 
+      f.value.lastName, 
       f.value.password).then((data: any) => {
 
       if (data.errType == 0) {

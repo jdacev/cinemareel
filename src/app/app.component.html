@@ -1,45 +1,44 @@
 <div id="page-wrapper">
-    <!-- Header Wrapper -->
-        <div id="header-wrapper">
-            <div class="container">
-                <!-- Header -->
-                <header id="header">
-                    <div class="inner">
-                        <!-- Logo -->
-                        <h1><a href="#" id="logo">Cinema</a></h1>
-                        <!-- Nav -->
-                        <nav id="nav" *ngIf="authService.isLoggedIn">
-                            <ul>
-                                <li><a href="#">Home</a></li>
-                                <li>
-                                    <a href="#">Mensajes</a>
-                                </li>
-                                <li><a href="">Notificaciones</a></li>
-                                <li> <!--class="current_page_item" -->
-                                    <a href="#">Mi Perfil</a>
-                                </li>
-                                <li><a href="#" (click)="logout()" class="boton-salir">Salir</a></li>
-                            </ul>
-                        </nav>
-                    </div>
-                </header>
-            </div>
+    <!-- nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="../assets/images/pic08.jpg" width="35" height="35" class="d-inline-block align-top" alt="">
+            &nbsp;&nbsp;Cinema Reel
+        </a>
+        <button *ngIf="authService.isLoggedIn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div *ngIf="authService.isLoggedIn" class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Mensajes</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Notificaciones</a></li>
+                <li class="nav-item"><a class="nav-link" href="#" (click)="logout()">Salir</a></li>
+                <li class="nav-item"><a class="nav-link" href="#"></a>&nbsp;</li>
+                <li class="nav-item"><a class="nav-link" href="#"></a>&nbsp;</li>
+                <li class="nav-item"><a class="nav-link" href="#">{{authService.AuthUser.user.firstName}} {{authService.AuthUser.user.lastName}}</a></li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+            </form>
         </div>
-
-        <!-- Main Wrapper -->
-        <div id="main-wrapper">
-            <div class="wrapper style3">
-                <div class="inner">
-                    <div class="container">
-                        <notifier-container></notifier-container>
-                        <div class="row">
-                            <alert></alert>
-                            <router-outlet></router-outlet>
-                        </div>
+    </nav>
+    <!-- Main Wrapper -->
+    <div id="main-wrapper">
+        <div class="wrapper style3">
+            <div class="inner">
+                <div class="container">
+                    <notifier-container></notifier-container>
+                    <div class="row">
+                        <alert></alert>
+                        <router-outlet></router-outlet>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
     <!-- Footer Wrapper -->
     <div id="footer-wrapper">
