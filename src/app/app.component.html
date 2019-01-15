@@ -2,8 +2,8 @@
     <!-- nav bar-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
-            <img src="../assets/images/pic08.jpg" width="35" height="35" class="d-inline-block align-top" alt="">
-            &nbsp;&nbsp;Cinema Reel
+            <img src="../assets/images/film-reel-gold.png" width="35" height="35" class="d-inline-block align-top" alt="">
+            &nbsp;&nbsp;CinemaReel
         </a>
         <button *ngIf="authService.isLoggedIn" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,68 +25,11 @@
             </form>
         </div>
     </nav>
-    <!-- Main Wrapper -->
     <div id="main-wrapper">
-        <div class="wrapper style3">
-            <div class="inner">
-                <div class="container">
-                    <notifier-container></notifier-container>
-                    <div class="row">
-                        <alert></alert>
-                        <router-outlet></router-outlet>
-                    </div>
-                </div>
-            </div>
+        <div class="container">
+            <notifier-container></notifier-container>
+            <alert></alert>
+            <router-outlet></router-outlet>
         </div>
-    </div>
-
-    <!-- Footer Wrapper -->
-    <div id="footer-wrapper">
-        <footer id="footer" class="container">
-            <div class="row">
-                <div class="col-12-medium">
-                    <!-- Contact -->
-                        <section>
-                            <h2>Para seguir en contacto</h2>
-                            <div>
-                                <div class="row">
-                                    <div class="col-12-small">
-                                        <dl class="contact">
-                                            <dt>Twitter</dt>
-                                            <dd><a href="#">@untitled-corp</a></dd>
-                                            <dt>Facebook</dt>
-                                            <dd><a href="#">facebook.com/untitled</a></dd>
-                                            <dt>Web</dt>
-                                            <dd><a href="#">untitled.tld</a></dd>
-                                            <dt>Correo</dt>
-                                            <dd><a href="#">user@untitled.tld</a></dd>
-                                        </dl>
-                                    </div>
-                                    <div class="col-12-small">
-                                        <dl class="contact">
-                                            <dt>Dirección</dt>
-                                            <dd>
-                                                Calle Falsa 123<br />
-                                                Quilmes, 1878<br />
-                                                Argentina
-                                            </dd>
-                                            <dt>Teléfono</dt>
-                                            <dd>+54 9 11 1234-5678</dd>
-                                        </dl>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                </div>
-                <div class="col-12">
-                    <div id="copyright">
-                        <ul class="menu">
-                            <li>&copy; Cinema. Todos los derechos reservados.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </div>
 </div>

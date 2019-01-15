@@ -14,6 +14,9 @@ import { LoginComponent } from './components/login/login.component';
 
 import { NgxSpinnerModule } from 'ngx-spinner';
 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RegisterComponent } from './components/register/register.component';
+
 
 const customNotifierOptions: NotifierOptions = {
   position: {
@@ -62,7 +65,8 @@ const customNotifierOptions: NotifierOptions = {
     AppComponent,
     HomeComponent,
     AlertComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -71,9 +75,11 @@ const customNotifierOptions: NotifierOptions = {
     FormsModule,
     AppRoutingModule,
     NgxSpinnerModule,
-    NotifierModule.withConfig(customNotifierOptions)
+    NotifierModule.withConfig(customNotifierOptions),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
