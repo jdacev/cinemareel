@@ -17,6 +17,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 
 const customNotifierOptions: NotifierOptions = {
@@ -26,7 +27,7 @@ const customNotifierOptions: NotifierOptions = {
 			distance: 12
 		},
 		vertical: {
-			position: 'bottom',
+			position: 'top',
 			distance: 12,
 			gap: 10
 		}
@@ -36,7 +37,7 @@ const customNotifierOptions: NotifierOptions = {
     autoHide: 2000,
     onClick: 'hide',
     onMouseover: 'pauseAutoHide',
-    showDismissButton: true,
+    showDismissButton: false,
     stacking: 4
   },
   animations: {
@@ -68,7 +69,8 @@ const customNotifierOptions: NotifierOptions = {
     AlertComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

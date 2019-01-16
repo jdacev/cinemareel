@@ -18,14 +18,38 @@ export class RegisterComponent implements OnInit {
   constructor(
     private spinner: NgxSpinnerService,
     private authService: AuthService,
-    private router: Router
-  ) { }
+    private router: Router,
+    notifierService: NotifierService
+  ) {
+    this.notifier = notifierService;
+   }
 
   ngOnInit() {
 
   }
 
   registrarme(f: NgForm){
+
+    if(f.value.emailreg=='') {
+      this.notifier.notify('info', 'El correo electrónico es requerido para continuar');
+      return;
+    }
+
+    if(f.value.firstName=='') {
+      this.notifier.notify('info', 'El nombre es requerido para continuar');
+      return;
+    }
+
+    if(f.value.lastName=='') {
+      this.notifier.notify('info', 'El apellido es requerido para continuar');
+      return;
+    }
+
+    if(f.value.password=='') {
+      this.notifier.notify('info', 'La contraseña es requerida para continuar');
+      return;
+    }
+
     this.loading = true;
     this.spinner.show();
 
