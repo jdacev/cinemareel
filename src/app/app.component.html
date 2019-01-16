@@ -11,19 +11,21 @@
         
         <div *ngIf="authService.isLoggedIn" class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="#"></a>&nbsp;</li>
+                <li class="nav-item"><a class="nav-link" href="#"></a>&nbsp;</li>
+                <li class="nav-item">
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" aria-label="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
+                    </form>
+                </li>
                 <li class="nav-item"><a class="nav-link" href="#">Mensajes</a></li>
                 <li class="nav-item"><a class="nav-link" href="#">Notificaciones</a></li>
-                <li class="nav-item"><a class="nav-link" href="#"></a>&nbsp;</li>
-                <li class="nav-item"><a class="nav-link" href="#"></a>&nbsp;</li>
                 <li class="nav-item"><a class="nav-link" [routerLink]="['/profile']">{{authService.AuthUser.user.firstName}} {{authService.AuthUser.user.lastName}}</a></li>
                 <li class="nav-item"><a class="nav-link" href="#"></a>&nbsp;</li>
                 <li class="nav-item"><a class="nav-link" href="#"></a>&nbsp;</li>
                 <li class="nav-item"><a class="nav-link" href="#" (click)="logout()">Salir</a></li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" aria-label="Search">
-            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
         </div>
     </nav>
     <div id="main-wrapper">
