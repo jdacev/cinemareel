@@ -102,4 +102,24 @@ export class AuthService {
         });
       });
     }
+
+    securityCode(email) {
+
+      var creds = {
+        email: email
+      }
+      
+      return new Promise(resolve => {
+        this.http.post(this.url + 'util/securitycode', creds).subscribe(response => {
+            
+          var data = response.json();
+          resolve( {errType:data.errType, message:data.message} );
+          //this.router.navigateByUrl(this.returnUrl);
+              
+        }, error => {
+          this.notifier.notify( 'error', error.json().message);
+          resolve(false);
+        });
+      });
+    }
 }

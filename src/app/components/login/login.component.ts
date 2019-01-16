@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
       } else {
         //this.alertService.error('Se produjo un error al entrar a Cinema Reel ' + JSON.stringify(data));
         this.router.navigate(['/login']);
-        this.notifier.notify('error', data.message);
+        this.notifier.notify('info', data.message);
       }
     }).then(()=> {
       this.loading = false;

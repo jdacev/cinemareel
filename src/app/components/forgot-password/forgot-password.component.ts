@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {NgForm} from '@angular/forms';
 import { Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
+import { AuthService } from '../../services/auth-service';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-forgot-password',
@@ -15,7 +17,9 @@ export class ForgotPasswordComponent implements OnInit {
 
   constructor(
     private router: Router,
-    notifierService: NotifierService
+    notifierService: NotifierService,
+    private authService: AuthService,
+    private spinner: NgxSpinnerService
   ) {
     this.notifier = notifierService;
    }
@@ -27,8 +31,15 @@ export class ForgotPasswordComponent implements OnInit {
     if(f.value.email=='') {
       this.notifier.notify('info', 'Hay que completar el correo electrónico para continuar');
     } else {
-      //TODO: llamar al servicio que envía el código de seguridad
-      //this.router.navigate(['/portal-home']);
+      this.loading = true;
+      this.spinner.show();
+      
+      this.authService.securityCode(f.value.email)
+        .then((data: any) => {
+          this.notifier.notify('info', data.message);
+          this.loading = false;
+          this.spinner.hide();
+      });
     }
   }
 
@@ -37,8 +48,7 @@ export class ForgotPasswordComponent implements OnInit {
     if(f.value.email=='') {
       this.notifier.notify('warning', 'Funcionalidad en desarrollo. Aun no disponible.');
     } else {
-      this.notifier.notify('warning', 'Funcionalidad en desarrollo. Aun no disponible.');
-      //this.router.navigate(['/portal-home']);
+
     }
   }
 
