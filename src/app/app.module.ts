@@ -16,6 +16,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RegisterComponent } from './components/register/register.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 const customNotifierOptions: NotifierOptions = {
@@ -32,7 +33,7 @@ const customNotifierOptions: NotifierOptions = {
 	},
   theme: 'material',
   behaviour: {
-    autoHide: 5000,
+    autoHide: 2000,
     onClick: 'hide',
     onMouseover: 'pauseAutoHide',
     showDismissButton: true,
@@ -66,7 +67,8 @@ const customNotifierOptions: NotifierOptions = {
     HomeComponent,
     AlertComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
