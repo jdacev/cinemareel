@@ -24,26 +24,26 @@ const customNotifierOptions: NotifierOptions = {
   position: {
 		horizontal: {
 			position: 'left',
-			distance: 12
+			distance: 20
 		},
 		vertical: {
-			position: 'top',
-			distance: 12,
+			position: 'bottom',
+			distance: 20,
 			gap: 10
 		}
 	},
   theme: 'material',
   behaviour: {
-    autoHide: 2000,
+    autoHide: 3000,
     onClick: 'hide',
     onMouseover: 'pauseAutoHide',
-    showDismissButton: false,
+    showDismissButton: true,
     stacking: 4
   },
   animations: {
     enabled: true,
     show: {
-      preset: 'slide',
+      preset: 'fade',
       speed: 300,
       easing: 'ease'
     },

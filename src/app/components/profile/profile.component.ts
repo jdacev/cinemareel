@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit {
   }
 
   saveData(f: NgForm){
-    this.notifier.notify('info', 'Datos personales actualizados');
+    this.notifier.notify('default', 'Datos personales actualizados');
     this.router.navigate(['/portal-home']);
   }
 

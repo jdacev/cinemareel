@@ -31,22 +31,22 @@ export class RegisterComponent implements OnInit {
   registrarme(f: NgForm){
 
     if(f.value.emailreg=='') {
-      this.notifier.notify('info', 'El correo electrónico es requerido para continuar');
+      this.notifier.notify('default', 'El correo electrónico es requerido para registrarse');
       return;
     }
 
     if(f.value.firstName=='') {
-      this.notifier.notify('info', 'El nombre es requerido para continuar');
+      this.notifier.notify('default', 'El nombre es requerido para registrarse');
       return;
     }
 
     if(f.value.lastName=='') {
-      this.notifier.notify('info', 'El apellido es requerido para continuar');
+      this.notifier.notify('default', 'El apellido es requerido para registrarse');
       return;
     }
 
     if(f.value.password=='') {
-      this.notifier.notify('info', 'La contraseña es requerida para continuar');
+      this.notifier.notify('default', 'La contraseña es requerida para registrarse');
       return;
     }
 

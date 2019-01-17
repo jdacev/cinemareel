@@ -3,13 +3,14 @@ import { Http, Headers } from '@angular/http';
 import { environment } from '../../environments/environment';
 import { Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
+import { EmailValidator } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  public notifier: NotifierService;
+  notifier: NotifierService;
   public url:string = null;
   public returnUrl:string;
   isLoggedIn: boolean;
@@ -18,12 +19,14 @@ export class AuthService {
 
   constructor (
     private http: Http,
-    private router: Router
+    private router: Router,
+    notifierService: NotifierService
     ) {
       
     this.url = environment.url;
     this.isLoggedIn = false;
     this.user = localStorage.getItem('currentUser');
+    this.notifier = notifierService;
   }
 
   storeUserCredentials(User) {
@@ -115,6 +118,46 @@ export class AuthService {
           var data = response.json();
           resolve( {errType:data.errType, message:data.message} );
           //this.router.navigateByUrl(this.returnUrl);
+              
+        }, error => {
+          this.notifier.notify( 'error', error.json().message);
+          resolve(false);
+        });
+      });
+    }
+
+    verifySecurityCode(email, securityCode) {
+
+      var creds = {
+        email: email,
+        securityCode: securityCode
+      }
+      
+      return new Promise(resolve => {
+        this.http.post(this.url + 'util/verifysecuritycode', creds).subscribe(response => {
+            
+          var data = response.json();
+          resolve( {errType:data.errType, message:data.message} );
+              
+        }, error => {
+          this.notifier.notify( 'error', error.json().message);
+          resolve(false);
+        });
+      });
+    }
+
+    restorePassword(email, password) {
+
+      var creds = {
+        email: email,
+        password: password
+      }
+      
+      return new Promise(resolve => {
+        this.http.post(this.url + 'util/restorepassword', creds).subscribe(response => {
+            
+          var data = response.json();
+          resolve( {errType:data.errType, message:data.message} );
               
         }, error => {
           this.notifier.notify( 'error', error.json().message);
