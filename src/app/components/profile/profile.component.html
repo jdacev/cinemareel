@@ -1,46 +1,33 @@
 <div class="row content-center">
     <div class="col-12">
-        <h4>Mi Perfil - Datos personales (Jorge: EN DESARROLLO)</h4>
+        <h4>Mi Perfil {{user.getFullName()}}</h4>
     </div>
   </div>
   <div class="row content-center">
     <div class="col-12">
         <div class="card-body">
           <div class="btn-group">
-            <form #formProfile="ngForm" (ngSubmit)="saveData(formProfile);">
+            <form #formProfile="ngForm" (ngSubmit)="updateProfile(formProfile);">
               <div>
-                <label for="emailreg">Correo electrónico</label>
-                <input ngModel type="text" name="emailreg" class="form-control">
+                <label for="email">Correo electrónico</label>
+                <input [(ngModel)]="user.email" type="text" name="email" class="form-control">
               </div>
               <div>
                 <label for="firstName">Nombre</label>
-                <input ngModel type="text" name="firstName" class="form-control">
+                <input [(ngModel)]="user.firstName" type="text" name="firstName" class="form-control">
               </div>
               <div>
                 <label for="lastName">Apellido</label>
-                <input ngModel type="text" name="lastName" class="form-control">
+                <input [(ngModel)]="user.lastName" type="text" name="lastName" class="form-control">
               </div>
               <div>
                   <label for="address">Dirección</label>
-                  <input ngModel type="text" name="address" class="form-control">
+                  <input [(ngModel)]="user.address" type="text" name="address" class="form-control">
                 </div>           
               <div>
                 <label for="telephone">Teléfono</label>
-                <input ngModel type="text" name="telephone" class="form-control">
+                <input [(ngModel)]="user.telephone" type="text" name="telephone" class="form-control">
               </div>
-              <div>
-                  <label for="accountType">Tipo de cuenta</label>
-                  <!-- <input ngModel type="text" name="accountType" class="form-control"> -->
-                  <div class="dropdown">
-                      <button class="btn btn-secondary dropdown-toggle" ngModel type="text" name="accountType" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Tipo de cuenta
-                      </button>
-                      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item">Gratis</a>
-                        <a class="dropdown-item">Premium</a>
-                      </div>
-                    </div>
-                </div>
               <div>
                 <br />
                 <!-- <button type="submit" [disabled]="loading" class="btn btn-primary">Guardar</button> -->

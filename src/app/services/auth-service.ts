@@ -15,7 +15,7 @@ export class AuthService {
   public returnUrl:string;
   isLoggedIn: boolean;
   AuthUser;
-  public user:string;
+  public currentUser:string;
 
   constructor (
     private http: Http,
@@ -25,7 +25,7 @@ export class AuthService {
       
     this.url = environment.url;
     this.isLoggedIn = false;
-    this.user = localStorage.getItem('currentUser');
+    this.currentUser = localStorage.getItem('currentUser');
     this.notifier = notifierService;
   }
 
@@ -36,7 +36,7 @@ export class AuthService {
 
   destroyCredentials(){
     localStorage.removeItem('currentUser');
-    this.user=null;
+    this.currentUser=null;
     this.isLoggedIn=false;
   }
 
@@ -49,7 +49,7 @@ export class AuthService {
     if(User) {
       this.isLoggedIn = true;
       this.AuthUser = User;
-      this.user = localStorage.getItem('currentUser');
+      this.currentUser = localStorage.getItem('currentUser');
     } else { 
       this.isLoggedIn = false;
       this.AuthUser = null;
@@ -69,7 +69,7 @@ export class AuthService {
       this.http.post(this.url + 'signup', regData).subscribe(response => {
           
           var data = response.json();
-          resolve( {errType:data.errType,message:data.message} );
+          resolve( {errType:data.errType, message:data.message} );
           if(data.errType == 0){
             this.storeUserCredentials(data);
           }

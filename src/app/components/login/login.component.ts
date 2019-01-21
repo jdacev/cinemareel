@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
       
       this.notifier = notifierService;
       
-      if (authService.user) {
+      if (authService.currentUser) {
         this.router.navigate(['portal-home']);
       }
    }
