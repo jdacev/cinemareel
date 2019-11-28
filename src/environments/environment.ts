@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  url: 'http://localhost:3000/api/v1/'
+  url: 'https://cinemareel-api.herokuapp.com/api/v1/'
 };
 
 /*
